@@ -168,6 +168,29 @@ annoyingSong(10)
 //70s should be Cs
 //60s should be D
 //and anything below 60 should be F
+function gradeCalculator(percent) {
+    if (percent === 100) {
+        return "A+"
+    } else if (percent < 100 && percent >= 90) {
+        return "A"
+    } else if (percent < 90 && percent >= 80) {
+        return "B"
+    } else if (percent < 80 && percent >= 70) {
+        return "C"
+    } else if (percent < 70 && percent >= 60) {
+        return "D"
+    } else {
+        return "F"
+    }
+}
+console.log(gradeCalculator(93)) // A
+console.log(gradeCalculator(63)) // D
+console.log(gradeCalculator(73)) // C
+console.log(gradeCalculator(88)) // B
+console.log(gradeCalculator(90)) // A
+console.log(gradeCalculator(60)) // D
+console.log(gradeCalculator(50)) // F
+console.log(gradeCalculator(100)) // A+
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
