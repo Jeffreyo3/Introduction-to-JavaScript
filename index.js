@@ -99,8 +99,8 @@ console.log(feeder(15, 0.34));
 console.log(feeder(15, 0.88));
 
 /************************************************************** Task 4 **************************************************************/
-// Rock, Paper, Sissors
-// Your function should take a string (either rock paper or sissors)
+// Rock, Paper, Scissors
+// Your function should take a string (either rock paper or scissors)
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number
@@ -112,7 +112,7 @@ function RPS(string) {
     userTurn = 1;
   } else if (string === "paper") {
     userTurn = 2;
-  } else if (string === "sissors") {
+  } else if (string === "scissors") {
     userTurn = 3;
   } else {
     return "Invalid turn";
@@ -121,9 +121,9 @@ function RPS(string) {
   if (computerTurn === userTurn) {
     return `Wow. Its a tie.`;
   } else if (computerTurn === 1 && userTurn === 3) {
-    return `You lose: rock beats sissors`;
+    return `You lose: rock beats scissors`;
   } else if (computerTurn === 3 && userTurn === 1) {
-    return `You win!: rock beats sissors`;
+    return `You win!: rock beats scissors`;
   } else if (computerTurn < userTurn) {
     return `You win!`;
   } else {
@@ -132,7 +132,7 @@ function RPS(string) {
 }
 console.log(RPS("rock"));
 console.log(RPS("paper"));
-console.log(RPS("sissors"));
+console.log(RPS("scissors"));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -153,14 +153,16 @@ console.log(ftToCM(2));
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
 function annoyingSong(number) {
-  const countDown = number;
-  for (i = 0; i < countDown; i++) {
-    console.log(
-      `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${
-        number - 1
-      } bottles of soda on the wall`
-    );
-    number = number - 1;
+  for (i = number; i >= 0; i--) {
+    if (i === 0) {
+      console.log(`There are ${i} bottles of soda on the wall.`);
+    } else {
+      console.log(
+        `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${
+          i - 1
+        } bottles of soda on the wall`
+      );
+    }
   }
 }
 annoyingSong(10);
@@ -202,5 +204,5 @@ console.log(gradeCalculator(100)); // A+
 // try looking up the .includes() method
 
 /************************************************************** Stretch **************************************************************/
-//Take Rock, Paper, Sissors further
-//update your rock papers sissors code below to take a prompt from a user using the window object
+//Take Rock, Paper, scissors further
+//update your rock papers scissors code below to take a prompt from a user using the window object
