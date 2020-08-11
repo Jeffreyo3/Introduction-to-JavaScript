@@ -106,60 +106,64 @@ console.log(feeder(15, 0.88));
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number
 
 function RPS(string) {
-    computerTurn = Math.floor(Math.random() * 3 + 1)
-    let userTurn = 0
-    if (string === "rock") {
-        userTurn = 1
-    } else if (string === "paper") {
-        userTurn = 2
-    } else if (string === "sissors") {
-        userTurn = 3
-    } else {
-        return "Invalid turn"
-    }
+  computerTurn = Math.floor(Math.random() * 3 + 1);
+  let userTurn = 0;
+  if (string === "rock") {
+    userTurn = 1;
+  } else if (string === "paper") {
+    userTurn = 2;
+  } else if (string === "sissors") {
+    userTurn = 3;
+  } else {
+    return "Invalid turn";
+  }
 
-    if (computerTurn === 1 && userTurn === 3) {
-        return `You lose: rock beats sissors`
-    } else if (computerTurn === 3 && userTurn === 1) {
-        return `You win!: rock beats sissors`
-    } else if (computerTurn < userTurn) {
-        return `You win!`
-    } else {
-        return `You lose!`
-    }
-    
-
+  if (computerTurn === userTurn) {
+    return `Wow. Its a tie.`;
+  } else if (computerTurn === 1 && userTurn === 3) {
+    return `You lose: rock beats sissors`;
+  } else if (computerTurn === 3 && userTurn === 1) {
+    return `You win!: rock beats sissors`;
+  } else if (computerTurn < userTurn) {
+    return `You win!`;
+  } else {
+    return `You lose!`;
+  }
 }
-console.log(RPS("rock"))
-console.log(RPS("paper"))
-console.log(RPS("sissors"))
+console.log(RPS("rock"));
+console.log(RPS("paper"));
+console.log(RPS("sissors"));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 function kmToMiles(km) {
-    return km / 1.609344
+  return km / 1.609344;
 }
-console.log(kmToMiles(1))
+console.log(kmToMiles(1));
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
 function ftToCM(ft) {
-    return ft * 30.48
+  return ft * 30.48;
 }
-console.log(ftToCM(2))
+console.log(ftToCM(2));
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
 function annoyingSong(number) {
-    const countDown = number
-    for (i = 0; i < countDown; i++) {
-        console.log(`${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number-1} bottles of soda on the wall`)
-        number = number - 1
-    }
+  const countDown = number;
+  for (i = 0; i < countDown; i++) {
+    console.log(
+      `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${
+        number - 1
+      } bottles of soda on the wall`
+    );
+    number = number - 1;
+  }
 }
-annoyingSong(10)
+annoyingSong(10);
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
 //write a javaScript program that takes a mark out of 100 and returns a corisponding letter grade
@@ -169,28 +173,28 @@ annoyingSong(10)
 //60s should be D
 //and anything below 60 should be F
 function gradeCalculator(percent) {
-    if (percent === 100) {
-        return "A+"
-    } else if (percent < 100 && percent >= 90) {
-        return "A"
-    } else if (percent < 90 && percent >= 80) {
-        return "B"
-    } else if (percent < 80 && percent >= 70) {
-        return "C"
-    } else if (percent < 70 && percent >= 60) {
-        return "D"
-    } else {
-        return "F"
-    }
+  if (percent === 100) {
+    return "A+";
+  } else if (percent < 100 && percent >= 90) {
+    return "A";
+  } else if (percent < 90 && percent >= 80) {
+    return "B";
+  } else if (percent < 80 && percent >= 70) {
+    return "C";
+  } else if (percent < 70 && percent >= 60) {
+    return "D";
+  } else {
+    return "F";
+  }
 }
-console.log(gradeCalculator(93)) // A
-console.log(gradeCalculator(63)) // D
-console.log(gradeCalculator(73)) // C
-console.log(gradeCalculator(88)) // B
-console.log(gradeCalculator(90)) // A
-console.log(gradeCalculator(60)) // D
-console.log(gradeCalculator(50)) // F
-console.log(gradeCalculator(100)) // A+
+console.log(gradeCalculator(93)); // A
+console.log(gradeCalculator(63)); // D
+console.log(gradeCalculator(73)); // C
+console.log(gradeCalculator(88)); // B
+console.log(gradeCalculator(90)); // A
+console.log(gradeCalculator(60)); // D
+console.log(gradeCalculator(50)); // F
+console.log(gradeCalculator(100)); // A+
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
