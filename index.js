@@ -105,34 +105,81 @@ console.log(feeder(15, 0.88));
 // use math.random to determine the computers choice
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number
 
-function RPS(string) {
-  computerTurn = Math.floor(Math.random() * 3 + 1);
-  let userTurn = 0;
-  if (string === "rock") {
-    userTurn = 1;
-  } else if (string === "paper") {
-    userTurn = 2;
-  } else if (string === "scissors") {
-    userTurn = 3;
-  } else {
-    return "Invalid turn";
+
+// input/user choice of rock/paper/scissors
+function rps(userChoice) {
+// generate a computer choice
+  const computerChoice = Math.floor(Math.random() * 3 + 1);
+  let userChoiceNum = 0;
+// assign userChoice to a number based on rock paper scissors
+  if (userChoice === "rock") {
+    userChoiceNum = 1
+  } else if (userChoice === "paper") {
+    userChoiceNum = 2
+  } else if (userChoice === "scissors") {
+    userChoiceNum = 3
   }
 
-  if (computerTurn === userTurn) {
-    return `Wow. Its a tie.`;
-  } else if (computerTurn === 1 && userTurn === 3) {
-    return `You lose: rock beats scissors`;
-  } else if (computerTurn === 3 && userTurn === 1) {
-    return `You win!: rock beats scissors`;
-  } else if (computerTurn < userTurn) {
-    return `You win!`;
-  } else {
-    return `You lose!`;
+  console.log(computerChoice)
+  console.log(userChoiceNum)
+
+
+  // compare computer choice with user choice determine a tie  
+  if (computerChoice === userChoiceNum) {
+    console.log("Yay. a tie....")
+    return "Tie"
   }
+  // determine when win/loss conditions are
+  else if (computerChoice === 1 && userChoiceNum === 3) {
+    console.log("You LOSE!")
+    return "Lose";
+  } else if (computerChoice === 3 && userChoiceNum === 1) {
+    console.log("You WIINNN!!")
+    return "Win";
+  } else if (computerChoice < userChoiceNum) {
+    console.log("You're a winner!")
+    return "Win";
+  }
+
+// print to console results
 }
-console.log(RPS("rock"));
-console.log(RPS("paper"));
-console.log(RPS("scissors"));
+
+rps("scissors")
+console.log(rps("rock"))
+
+
+
+
+
+
+// function RPS(string) {
+//   computerTurn = Math.floor(Math.random() * 3 + 1);
+//   let userTurn = 0;
+//   if (string === "rock") {
+//     userTurn = 1;
+//   } else if (string === "paper") {
+//     userTurn = 2;
+//   } else if (string === "scissors") {
+//     userTurn = 3;
+//   } else {
+//     return "Invalid turn";
+//   }
+
+//   if (computerTurn === userTurn) {
+//     return `Wow. Its a tie.`;
+//   } else if (computerTurn === 1 && userTurn === 3) {
+//     return `You lose: rock beats scissors`;
+//   } else if (computerTurn === 3 && userTurn === 1) {
+//     return `You win!: rock beats scissors`;
+//   } else if (computerTurn < userTurn) {
+//     return `You win!`;
+//   } else {
+//     return `You lose!`;
+//   }
+// }
+// console.log(RPS("rock"));
+// console.log(RPS("paper"));
+// console.log(RPS("scissors"));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
