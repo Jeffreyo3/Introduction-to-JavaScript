@@ -45,36 +45,39 @@ console.log(humanToDogYears(30));
 
 //feeding requirements
 function feeder(weight, age) {
-  // adult dogs at least 1 year
+  // vvv  adult dogs at least 1 year  vvv
   if (age >= 1) {
     // up to 5 lbs - 5% of their body weight
     if (weight <= 5) {
       return weight * 0.05;
-      // 6 - 10 lbs - 4% of their body weight
+    // 6 - 10 lbs - 4% of their body weight
     } else if (weight > 5 && weight <= 10) {
       return weight * 0.04;
-      // 11 - 15 lbs - 3% of their body weight
+    // 11 - 15 lbs - 3% of their body weight
     } else if (weight > 10 && weight <= 15) {
       return weight * 0.03;
-      // > 15lbs - 2% of their body weight
+    // > 15lbs - 2% of their body weight
     } else {
       return weight * 0.02;
     }
-    // Puppies less than 1 year
+  // ^^^  adult dogs at least 1 year  ^^^
+
+  // vvv  Puppies less than 1 year  vvv
   } else {
-    // 2 - 4 months 10% of their body weight
     if (age <= 0.16) {
-      return "Please feed with bottle";
-      // 4 - 7 months 5% of their body weight
-    } else if (age > 0.16 && age <= 0.33) {
+      return "Should be nursing or feeding with a bottle.";
+    // 2 - 4 months 10% of their body weight
+    } else if (age > 0.16 && age <= 0.333) {
       return weight * 0.1;
-      // 7 - 12 months 4% of their body weight
-    } else if (age > 0.33 && age <= 0.58) {
+    // 4 - 7 months 5% of their body weight
+    } else if (age > 0.333 && age <= 0.583) {
       return weight * 0.05;
+    // 7 - 12 months 4% of their body weight
     } else {
       return weight * 0.04;
     }
   }
+  // ^^^  Puppies less than 1 year  ^^^
 }
 
 // test older than 1 & lowest weight
